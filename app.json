@@ -1,6 +1,9 @@
 {
   "expo": {
     "name": "CheckIn",
-    "slug": "CheckIn"
+    "slug": "CheckIn",
+    "android": {
+      "package": "com.hasnain1.CheckIn"
+    }
   }
 }

@@ -30,13 +30,15 @@ const homeStyle = StyleSheet.create({
   },
   postLayoutContainer:{
     backgroundColor: COLORS.white,
-    flexDirection: "row",
+    flexDirection: "column",
     marginTop: 8,
 
     alignItems: "center",
     padding: 14,
     paddingTop: 12,
     paddingBottom: 12,
+    marginRight:10,
+    marginLeft:10,
   },
   topLayoutBtns: {
     flexDirection: "row",
@@ -61,7 +63,7 @@ const homeStyle = StyleSheet.create({
     width: 40,
     height: 40,
     shadowColor: "black",
-    elevation: 5,
+    
   },
   postfirstRowLeft: {
     flexDirection: "row",
@@ -72,11 +74,61 @@ const homeStyle = StyleSheet.create({
     marginLeft:5,
   },
   flexRow:{
-    flexDirection: "row",
-    justifyContent:'space-between',
+   flexDirection: "row",
+   justifyContent:'space-between',
+   width: '100%',
+  },
+  postCenter:{
+    // backgroundColor:'red',
+    marginTop:20,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent:'space-around',
+  },
+  postLocation:{
+    flexDirection:'row',
+    // padding:10,
+    backgroundColor:COLORS.postInput,
+    borderRadius:40,
+    justifyContent: 'center',
+     paddingLeft:10,
+     paddingRight:10,
+    alignItems: 'center',
   
-    flex:1,
-  }
+
+  },
+  postViews:{
+    flexDirection:'row',
+    justifyContent:'flex-end',
+  },
+  postedDateText :{
+    color:COLORS.gray,
+    fontSize:12,
+  },
+  postCenterRight:{
+    
+  },
+  postBottom:{
+    justifyContent:'flex-start',
+    width:'100%',
+    marginLeft:20,
+    marginTop:15,
+    marginBottom:10,
+   
+  },
+  postArrivedLeft:{
+    flexDirection:'row',
+  },
+  postRecommended:{
+   
+    alignItems: 'flex-start',
+   
+ 
+    
+    width:'100%',
+    // flexDirection:'row',
+  },
+
 });
 
 export default homeStyle;

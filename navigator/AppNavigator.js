@@ -3,13 +3,17 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Entypo ,Ionicons,AntDesign } from '@expo/vector-icons';
 import {  useNavigation } from "@react-navigation/native";
-import { View,Dimensions } from "react-native";
+import { View,Dimensions ,TextInput,Text ,FlatList,Image} from "react-native";
 import FriendScreen from "../Screens/Home/FriendScreen";
 import NotificationScreen from "../Screens/Home/NotificationScreen";
 import MenuScreen from "../Screens/Home/MenuScreen";
 import ProfileScreen from "../Screens/Home/ProfileScreen";
 import HomeHeader from "../components/HomeHeader";
 import HomeScreen from "../Screens/Home/HomeScreen";
+import FriendsList from "./drawer/FriendsList";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Platform } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 
 const Drawer = createDrawerNavigator();
@@ -63,7 +67,7 @@ const BottomTabNavigator = () => {
       <HomeHeader/> 
     <Tab.Navigator
       tabBarPosition="bottom"
-     
+     initialRouteName="Notification"
     >
       {tabsData.map((tabData) => (
         <Tab.Screen
@@ -105,13 +109,40 @@ const BottomTabNavigator = () => {
     </>
   );
 };
+ 
+
+const FavouriteText = () => (
+  <View style={{ padding: 10 }}>
+    <Text>Favourites</Text>
+  </View>
+);
+
+
+
+ 
 
 const FriendsDrawer = () => (
-  <Drawer.Navigator screenOptions={{
+ 
+
+ 
+  <Drawer.Navigator
+  drawerPosition="right"
+  initialRouteName="Home"
+  screenOptions={{
     headerShown:false,
-  }}>
-    <Drawer.Screen name="Tabs" component={BottomTabNavigator} />
+    drawerPosition:"right",
+  }} 
+  drawerContent={() => (
+    <View style={{backgroundColor:'#818080'}}>
+      <FriendsList />
+    </View>
+  
+  )}
+>
+  {/* Add more screens as needed */}
+  <Drawer.Screen component={BottomTabNavigator} name ="bottom" />
 </Drawer.Navigator>
+ 
 );
 
 export { BottomTabNavigator, FriendsDrawer };

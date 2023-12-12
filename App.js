@@ -54,7 +54,7 @@ const App = () => {
   }, []);
 const Stack = createStackNavigator();
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator 
        screenOptions={({ route, navigation }) => ({
         headerShown: false,

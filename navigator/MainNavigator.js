@@ -6,6 +6,7 @@ import {Movies,Restaurant,Travels} from '../Screens/Category/';
 const MainNavigator = () => {
  const Stack = createStackNavigator(); 
   return (
+    
    <Stack.Navigator>
  <Stack.Screen name="frienddrawer" component={FriendsDrawer} options={{
        headerShown:false,

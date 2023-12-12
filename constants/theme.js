@@ -11,6 +11,9 @@ const COLORS = {
   postInput:'#acacae',
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+  friendSearch:"#42495d",
+  friendlistBg:"#32394b",
+  postBackground:'#a0a0a270',
 };
 
 const FONT = {

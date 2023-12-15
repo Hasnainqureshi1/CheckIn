@@ -6,6 +6,13 @@ import { createStackNavigator,TransitionPresets } from '@react-navigation/stack'
 import Login from './Screens/Log/Login';
 import { BottomTabNavigator, FriendsDrawer } from './navigator/AppNavigator';
 import MainNavigator from './navigator/MainNavigator';
+import CheckInList from './components/ProfileComponents/CheckInList';
+import * as ScreenOrientation from 'expo-screen-orientation';
+
+// Lock to portrait on app start
+ 
+
+ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
 
 const LoginScreen = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);

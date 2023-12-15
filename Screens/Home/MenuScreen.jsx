@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-
+import { COLORS, FONT, SIZES, SHADOWS } from "../../constants/";
 const MenuScreen = () => {
   return (
     <View style={styles.container}>
@@ -29,23 +29,33 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   heading: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    borderBottomColor:'gray',
+    borderBottomWidth: 1,
+    paddingBottom:14,
   },
   menuItem: {
-    borderBottomWidth: 1,
+    // borderBottomWidth: 1,
     borderBottomColor: 'gray',
-    paddingVertical: 15,
+    paddingVertical: 10,
   },
   logoutButton: {
     borderTopWidth: 1,
     borderTopColor: 'gray',
     marginTop: 10,
+  
+     borderBottomWidth: 1,
+     borderBottomColor: 'gray',
+     backgroundColor:COLORS.secondary,
   },
   logoutText: {
-    color: 'red',
+    color: 'white',
+    fontWeight:'900',
     textAlign: 'center',
+     
+    
   },
 });
 

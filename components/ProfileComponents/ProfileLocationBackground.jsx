@@ -7,10 +7,11 @@ import { images } from '../../constants';
 import { TouchableOpacity } from 'react-native';
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import CreatePostModal from '../../Screens/Model/CreatePostModal';
+import { useNavigation } from '@react-navigation/native';
 
 const ProfileLocationBackground = () => {
   const [isCreatePostModalVisible, setCreatePostModalVisible] = useState(false);
-
+const navigate = useNavigation();
   const toggleCreatePostModal = () => {
     setCreatePostModalVisible(!isCreatePostModalVisible);
     console.log('toogle create post modal');
@@ -29,7 +30,7 @@ const ProfileLocationBackground = () => {
         <Text style={profileStyle.profileNameFacebook}>Facebook</Text>
       </View>
  <View style={profileStyle.prfileTopButtons}>
-  <TouchableOpacity style={profileStyle.profileTopButton}>
+  <TouchableOpacity style={profileStyle.profileTopButton} onPress={()=>{navigate.navigate('CheckedInList')}}>
   <FontAwesome5 name="clipboard-list" size={18} color="black" />
    <Text style={{marginLeft:4,}}>Check in list</Text>
   </TouchableOpacity>

@@ -8,13 +8,58 @@ import {
   TextInput,
  
 } from 'react-native';
-
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+ 
+import DateTimePicker from '@react-native-community/datetimepicker';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { images } from '../../constants';
-import { Picker } from 'react-native-web';
+import { COLORS, icons, images } from '../../constants';
+ 
+ 
 
 const CreatePostModal = ({ isVisible, onClose }) => {
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showTimePicker, setShowTimePicker] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new
+ 
+Date());
+  const [selectedTime, setSelectedTime] = useState(new
+ 
+Date());
+
+  const handleDateChange = (event, newDate) => {
+    setSelectedDate(newDate);
+    setShowDatePicker(false);
+  };
+
+  const handleTimeChange = (event, newTime) => {
+    setSelectedTime(newTime);
+    setShowTimePicker(false);
+  };
+
+  const showDatePickerModal = () => {
+    setShowDatePicker(true);
+  };
+
+  const showTimePickerModal = () => {
+    setShowTimePicker(true);
+  };
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const formatTime = (time) => {
+    return time.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+    });
+  };
+
+
+
   const [postType, setPostType] = useState('public'); // You can replace 'public' with a default value
   const [location, setLocation] = useState('');
   const [arrivalTime, setArrivalTime] = useState('');
@@ -38,50 +83,69 @@ const CreatePostModal = ({ isVisible, onClose }) => {
       visible={isVisible}
       onRequestClose={onClose}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <View style={{ backgroundColor: 'white', padding: 20, width: '80%' }}>
+        <View style={{ backgroundColor: 'white', padding: 13, width: '96%' }}>
          
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center',borderBottomColor:'gray',borderBottomWidth:1,paddingBottom:13, }}>
             <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Create Post</Text>
-            <TouchableOpacity onPress={onClose}>
-              <Ionicons name="close-outline" size={24} color="black" />
+            <TouchableOpacity onPress={onClose} style={{backgroundColor:COLORS.postBackground,borderRadius:50,alignItems:'center',justifyContent:'center',width:25,height:25,position:'absolute',right:0}}>
+              <Ionicons name="close-outline" size={24} color="#01aa" />
             </TouchableOpacity>
           </View>
  
           <View style={{ flexDirection: 'row', marginTop: 20 }}>
-         
+         {/* Left side modal  */}
             <View style={{ flex: 1 }}>
             
-              <View style={{ flexDirection: 'row' }}>
-                <Image source={images.profile} style={{ width: 50, height: 50 }} />
-                <View style={{ marginLeft: 10 }}>
-                  <Text style={{ fontWeight: 'bold' }}>Hasnain Qureshi</Text>
+              <View style={{ flexDirection: 'row'}}>
+                <Image source={images.profile} style={{ width: 40, height: 40 }} />
+                <View style={{ marginLeft: 10,flexWrap:'wrap' }}>
+                  <Text style={{ fontWeight: 'bold',fontSize:12, }}>Hasnain Qureshi</Text>
+                  <Text style={{ fontWeight: 'bold',fontSize:12,color:'gray',backgroundColor:'darkgray', width:50 }}>Public</Text>
                   
                 
                 </View>
               </View>
 
            
-              <View style={{ marginTop: 10 }}>
-                <Text>Choose Location</Text>
+              <View style={{ marginTop: 13 }}>
+                <View style={{flexDirection:'row',backgroundColor:COLORS.postInput,padding:4,paddingHorizontal:7,paddingBottom:5,  borderRadius:40,alignItems:'center', }}>
+                  <Image source={icons.tagPinLocation} style={{width:20,height:20,objectFit:'contain',marginRight:5,}} />
+                  <Text style={{color:'#fff',fontSize:13,}}>( enter tag )</Text>
+                </View>
                
-                <TextInput
-                  style={{ borderBottomWidth: 1, paddingVertical: 5 }}
-                  placeholder="Enter location"
-                  value={location}
-                  onChangeText={(text) => setLocation(text)}
-                />
+               
               </View>
 
               
               <View style={{ marginTop: 10 }}>
                 <Text>Arrived At</Text>
+             
+      
+      <View style={{ flexDirection: 'row' }}>
+        <Button title="Select Date" onPress={showDatePickerModal} />
+        {showDatePicker && (
+          <DateTimePicker
+            mode={'date'}
+            value={selectedDate}
+            onChange={handleDateChange}
+          />
+        )}
+        <Button title="Select Time" onPress={showTimePickerModal} />
+        {showTimePicker && (
+          <DateTimePicker
+            mode={'time'}
+            value={selectedTime}
+            is24Hour={true}
+            onChange={handleTimeChange}
+          />
+        )}
+      </View>
+      <Text>
+        Selected Date: {formatDate(selectedDate)}
+      </Text>
+      <Text>Selected Time: {formatTime(selectedTime)}</Text>
+ 
                 
-                <TextInput
-                  style={{ borderBottomWidth: 1, paddingVertical: 5 }}
-                  placeholder="Select date and time"
-                  value={arrivalTime}
-                  onChangeText={(text) => setArrivalTime(text)}
-                />
               </View>
  
               <View style={{ marginTop: 10 }}>
@@ -96,7 +160,7 @@ const CreatePostModal = ({ isVisible, onClose }) => {
               </View>
             </View>
 
-          
+      {/* Right side modal            */}
             <View style={{ flex: 1, marginLeft: 20 }}>
              
               <Text>Drag and Drop Image</Text>

@@ -10,6 +10,7 @@ import chevronLeft from '../assets/icons/chevron-left.png'
 import chevronRight from '../assets/icons/chevron-right.png'
 import facebook from '../assets/icons/facebook.png'
 import signUp from '../assets/icons/signup.png'
+import tagPinLocation from '../assets/icons/tagpinlocation.png'
 
 export default {
   heart,
@@ -24,4 +25,6 @@ export default {
   chevronRight,
   facebook,
   signUp,
+  tagPinLocation
+
 };

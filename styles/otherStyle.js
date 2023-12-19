@@ -63,6 +63,21 @@ height:20,
    borderStyle:'dotted',
    color: COLORS.gray2,
  },
+ imageContainer:{
+  flex: 1, marginLeft: 20,height:'60%',borderColor:'gray',
+  shadowColor: "#000",
+shadowOffset: {
+	width: 5,
+	height: 5,
+},
+shadowOpacity: 0.0,
+shadowRadius: 10.65,
+// borderWidth:1,
+justifyContent: "center",
+alignItems:'center',
+
+elevation: 3,
+ },
 
 });
 

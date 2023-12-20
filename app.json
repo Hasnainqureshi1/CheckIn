@@ -4,6 +4,18 @@
     "slug": "CheckIn",
     "android": {
       "package": "com.hasnain1.CheckIn"
+    },
+    "scheme": [
+      "CheckIn",
+      "fb1060180685323861"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4ac17399-39ce-46a2-a9f3-4974951949e4"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.hasnain1.CheckIn"
     }
   }
 }

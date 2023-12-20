@@ -12,7 +12,7 @@ const firebaseConfig = {
   apiKey: 'api-key',
   authDomain: 'project-id.firebaseapp.com',
   databaseURL: 'https://project-id.firebaseio.com',
-  projectId: 'project-id',
+  projectId: 'checkedin-b42c2',
   storageBucket: 'project-id.appspot.com',
   messagingSenderId: 'sender-id',
   appId: 'app-id',

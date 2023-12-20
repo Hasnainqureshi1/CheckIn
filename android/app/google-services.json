@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077314575189",
+    "project_id": "checkedin-b42c2",
+    "storage_bucket": "checkedin-b42c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077314575189:android:81649ddba9e0dbc27beddc",
+        "android_client_info": {
+          "package_name": "com.hasnain1.CheckIn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD3GURshZvI_Mmza-IpHHil9-X79St_hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

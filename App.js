@@ -46,8 +46,8 @@ const HomeScreen = () => {
 };
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   // Check if user is already logged in
   React.useEffect(() => {
     const checkLoginState = async () => {

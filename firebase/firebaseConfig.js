@@ -13,6 +13,7 @@ import { getStorage } from "firebase/storage";
 
 // Initialize Firebase
 const firebaseConfig = {
+<<<<<<< HEAD
   apiKey: "AIzaSyBy7zZ5bFWlo3J5-nDxplXfX2CJhCcnz3I",
   authDomain: "checkedin-b42c2.firebaseapp.com",
   projectId: "checkedin-b42c2",
@@ -20,6 +21,16 @@ const firebaseConfig = {
   messagingSenderId: "1077314575189",
   appId: "1:1077314575189:web:6b2134c750fe673c7beddc",
   measurementId: "G-K4MKX4T6F9"
+=======
+  apiKey: 'api-key',
+  authDomain: 'project-id.firebaseapp.com',
+  databaseURL: 'https://project-id.firebaseio.com',
+  projectId: 'checkedin-b42c2',
+  storageBucket: 'project-id.appspot.com',
+  messagingSenderId: 'sender-id',
+  appId: 'app-id',
+  measurementId: 'G-measurement-id',
+>>>>>>> bd0467ec7a9b28abb152914c453a16a90e394936
 };
 
 

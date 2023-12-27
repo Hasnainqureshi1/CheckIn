@@ -8,6 +8,10 @@ import { BottomTabNavigator, FriendsDrawer } from './navigator/AppNavigator';
 import MainNavigator from './navigator/MainNavigator';
 import CheckInList from './components/ProfileComponents/CheckInList';
 import * as ScreenOrientation from 'expo-screen-orientation';
+import { app, auth } from './firebase/firebaseConfig';
+import { FacebookAuthProviderm,signInWithCredential } from 'firebase/auth';
+import { LoginManager,AccessToken } from 'react-native-fbsdk-next';
+
 
 // Lock to portrait on app start
  
@@ -16,7 +20,7 @@ ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
 
 const LoginScreen = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  // https://com.hasnain1.CheckIn/expo-development-client/?url=http%3A%2F%2F192.168.0.104%3A8081
   const handleLogin = async () => {
     // Simulate login
     // ...
@@ -25,6 +29,8 @@ const LoginScreen = () => {
     await AsyncStorage.setItem('isLoggedIn', 'true');
     setIsLoggedIn(true);
   };
+ 
+
 
   return (
     <View>
@@ -46,10 +52,13 @@ const HomeScreen = () => {
 };
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Check if user is already logged in
   React.useEffect(() => {
+    console.log(
+      app
+    )
     const checkLoginState = async () => {
       const isLoggedInStored = await AsyncStorage.getItem('isLoggedIn');
       if (isLoggedInStored === 'true') {

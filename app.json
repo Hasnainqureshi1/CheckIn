@@ -2,8 +2,32 @@
   "expo": {
     "name": "CheckIn",
     "slug": "CheckIn",
+    "plugins": [
+      [
+        "react-native-fbsdk-next",
+        {
+          "appID": "1060180685323861",
+          "clientToken": "f2bbf3e3eb69d71774a4e17a293da750",
+          "displayName": "Check IN"
+        }
+      ]
+    ],
     "android": {
-      "package": "com.hasnain1.CheckIn"
+      "package": "com.hasnain1.CheckIn",
+      "permissions": [
+        "android.permission.INTERNET"
+      ]
+    },
+    "scheme": [
+      "CheckIn","fb1060180685323861"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4ac17399-39ce-46a2-a9f3-4974951949e4"
+      }
     }
+    
   }
 }
+ 
+ 

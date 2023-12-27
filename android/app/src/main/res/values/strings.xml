@@ -1,3 +1,6 @@
 <resources>
   <string name="app_name">CheckIn</string>
+  <string name="facebook_app_id">1060180685323861</string>
+  <string name="facebook_client_token">f2bbf3e3eb69d71774a4e17a293da750</string>
+  <string name="fb_login_protocol_scheme">fb1060180685323861</string>
 </resources>
